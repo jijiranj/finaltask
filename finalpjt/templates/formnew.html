@@ -1,0 +1,19 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<script src="{% static 'form.js' %}"></script>
+<body>
+<div>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1 style="text-align:center;">CONTACT FORM</h1>
+    {{form.as_p}}
+    <button type=”submit” class=”btn btn-primary”>Create form</button>
+</form>
+
+</div>
+  {% for msg in messages %}
+<h2>{{msg}}</h2><a href="/">HOME</a>
+{% endfor %}
+</body>
+</html>
